@@ -33,10 +33,38 @@ class SetTest {
         Assertions.assertEquals(1, set.size());
     }
 
-//    @Test
-//    void retrieveElement(){
-//
-//    }
+    @Test
+    void containsElement(){
+        MarokosSet set = new MarokosSet(1);
+        set.add(10);
+        Assertions.assertTrue(set.contains(10));
+
+    }
+
+    @Test
+    void dymanicAllocationSuccessful(){
+        MarokosSet set = new MarokosSet(0);
+        set.add(1);
+        set.add(2);
+        Assertions.assertEquals(2, set.size());
+
+
+    }
+
+    @Test
+    void dymanicAllocation10Successful(){
+        MarokosSet set = new MarokosSet(10);
+        set.add(1);
+        set.add(2);
+        Assertions.assertEquals(12, set.size());
+    }
+
+    @Test
+    void doesntContainMinusOne() {
+        MarokosSet set = new MarokosSet(10);
+        Assertions.assertFalse(set.contains(-1));
+    }
+
 
 //    @Test
 //    void removeSuccessful(){
